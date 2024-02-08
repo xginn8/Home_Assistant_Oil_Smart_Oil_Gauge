@@ -9,7 +9,10 @@ from selenium.webdriver.common.by import By
 display = Display(visible=0, size=(800, 600))
 display.start()
 
-browser = webdriver.Chrome()
+opts = webdriver.ChromeOptions()
+opts.add_argument("--headless")
+opts.add_argument("--no-sandbox")
+browser = webdriver.Chrome(options=opts)
 
 browser.set_window_size(1440, 900)
 
